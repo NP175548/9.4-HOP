@@ -7,21 +7,20 @@
 </head>
 <body>
 
-  <h1>Thank you!</h1>
+  <h1>Your information has been received.</h1>
   <div class="confirmation-box">
     <p id="name"></p>
     <p id="email"></p>
+    <p id="rating"></p>
     <p id="comments"></p>
     <button onclick="history.back()">Go Back</button>
   </div>
 
   <script>
-    document.getElementById("name").textContent =
-      "myName : " + sessionStorage.getItem("myName");
-    document.getElementById("email").textContent =
-      "myEmail : " + sessionStorage.getItem("myEmail");
-    document.getElementById("comments").textContent =
-      "myComments : " + sessionStorage.getItem("myComments");
+    document.getElementById("name").textContent = "myName : " + sessionStorage.getItem("myName");
+    document.getElementById("email").textContent = "myEmail : " + sessionStorage.getItem("myEmail");
+    document.getElementById("rating").textContent = "myRating : " + (sessionStorage.getItem("myRating") || "N/A");
+    document.getElementById("comments").textContent = "myComments : " + sessionStorage.getItem("myComments");
   </script>
 
 </body>
