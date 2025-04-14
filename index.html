@@ -1,38 +1,43 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Contact Form</title>
-  <meta charset="utf-8"> 
+  <meta charset="UTF-8">
+  <title>Comment Form</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>Contact Us</h1>
+  <h1>Send Us Your Comments</h1>
+  <p>Required fields marked with an asterisk *</p>
 
   <form id="contactForm">
-    <label for="myName">Name:</label>
-    <input type="text" name="myName" id="myName" required>
+    <fieldset>
+      <legend>Comment Form</legend>
 
-    <label for="myEmail">E-mail:</label>
-    <input type="email" name="myEmail" id="myEmail" required>
+      <label for="myName">*Name:</label>
+      <input type="text" name="myName" id="myName" placeholder="your first and last name" required>
 
-    <label for="myComments">Comments:</label>
-    <textarea name="myComments" id="myComments" rows="2" cols="20" required></textarea>
+      <label for="myEmail">*E-mail:</label>
+      <input type="email" name="myEmail" id="myEmail" required>
 
-    <input id="mySubmit" type="submit" value="Submit">
+      <label for="myRating">Rating (1 - 10):</label>
+      <input type="number" name="myRating" id="myRating" min="1" max="10">
+
+      <label for="myComments">*Comments:</label>
+      <textarea name="myComments" id="myComments" rows="4" cols="40" required></textarea>
+
+      <input id="mySubmit" type="submit" value="Submit">
+    </fieldset>
   </form>
 
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const name = document.getElementById("myName").value;
-      const email = document.getElementById("myEmail").value;
-      const comments = document.getElementById("myComments").value;
-
-      sessionStorage.setItem("myName", name);
-      sessionStorage.setItem("myEmail", email);
-      sessionStorage.setItem("myComments", comments);
+      sessionStorage.setItem("myName", document.getElementById("myName").value);
+      sessionStorage.setItem("myEmail", document.getElementById("myEmail").value);
+      sessionStorage.setItem("myRating", document.getElementById("myRating").value);
+      sessionStorage.setItem("myComments", document.getElementById("myComments").value);
 
       window.location.href = "contact.html";
     });
