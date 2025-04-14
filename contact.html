@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Form Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Your information has been received.</h1>
 
-  <p id="name"></p>
-  <p id="email"></p>
-  <p id="comments"></p>
-
-  <button onclick="history.back()">Back</button>
+  <h1>Thank you!</h1>
+  <div class="confirmation-box">
+    <p id="name"></p>
+    <p id="email"></p>
+    <p id="comments"></p>
+    <button onclick="history.back()">Go Back</button>
+  </div>
 
   <script>
     document.getElementById("name").textContent =
       "myName : " + sessionStorage.getItem("myName");
-
     document.getElementById("email").textContent =
       "myEmail : " + sessionStorage.getItem("myEmail");
-
     document.getElementById("comments").textContent =
       "myComments : " + sessionStorage.getItem("myComments");
   </script>
+
 </body>
 </html>
