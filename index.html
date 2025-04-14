@@ -2,24 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Test Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    fieldset {
+      width: 320px;
+      border: 2px ridge #ff0000;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    legend {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: bold;
+    }
+
+    label {
+      font-family: Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
 
 <h1>Contact Us</h1>
 
-<form method="post" action="http://webdevbasics.net/scripts/demo.php">
-  <label for="myName">Name:</label>
-  <input type="text" name="myName" id="myName" required><br><br>
+<form>
+  <fieldset>
+    <legend>Contact Information</legend>
 
-  <label for="myEmail">Email:</label>
-  <input type="email" name="myEmail" id="myEmail" required><br><br>
+    <label for="fname">First Name: </label>
+    <input type="text" name="fname" id="fname" required>
+    <br>
 
-  <label for="myComments">Comments:</label><br>
-  <textarea name="myComments" id="myComments" rows="4" cols="40" required></textarea><br><br>
+    <label for="lname">Last Name: </label>
+    <input type="text" name="lname" id="lname" required>
+    <br>
 
-  <input type="submit" value="Submit">
-  <input type="reset" value="Reset">
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" required>
+    <br>
+
+    <label for="comments">Comments: </label><br>
+    <textarea name="comments" id="comments" rows="4" cols="40" required></textarea>
+    <br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </fieldset>
 </form>
 
 </body>
